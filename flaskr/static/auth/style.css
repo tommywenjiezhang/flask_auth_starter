@@ -1,0 +1,19 @@
+
+body{
+    background-color: #2a9d8f;
+    color:white;
+}
+.btn-primary{
+ display:inline-block;
+ width: 100%;
+ min-width: 100%;
+ color:#fffffc;
+}
+
+
+#loginForm{
+  
+    background-color: #fffffc;
+    border-radius: 5%;
+    color:black;
+}

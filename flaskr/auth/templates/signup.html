@@ -1,0 +1,40 @@
+
+{%extends "base.html"%}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-10 offset-md-1 col-sm-12 col-lg-6 offset-lg-3 mt-5">
+        <div class="container">
+            <h1>Sign up Form </h1>
+            {% with errors = get_flashed_messages(category_filter=["errors"]) %}
+            {% if errors %}
+            <div class="alert alert-danger">
+                {{ errors[0] }}. Go to <a href="{{ url_for('auth_bp.login') }}">login page</a>.
+            </div>
+            {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <form action="/signup" method="post">
+                    <div class="form-group">
+                        <label for="email">email</label>
+                        <input type="text" class="form-control" id="email" name="email" aria-describedby="email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="text" class="form-control" id="password" name="password" aria-describedby="username">
+                      </div> 
+                      <div class="form-group">
+                        <label for="name">name</label>
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="username">
+                      </div>
+                      <input type="submit" class="btn btn-primary" value="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
